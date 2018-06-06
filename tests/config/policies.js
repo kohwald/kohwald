@@ -17,12 +17,16 @@
  */
 
 
-module.exports.policies = {
+module.exports.policies = { 
 
-  /***************************************************************************
-  *                                                                          *
-  * Default policy for all controllers and actions (`true` allows public     *
-  * access)                                                                  *
+'*': true, //'isAuthenticated',
+     UserController: true,
+     AuthController:true
+ }
+ 
+
+  /*  * Default policy for all controllers and actions (`true` allows public   *
+  * access)                                                                *
   *                                                                          *
   ***************************************************************************/
 
@@ -48,4 +52,4 @@ module.exports.policies = {
 		// before letting any users feed our rabbits
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
-};
+

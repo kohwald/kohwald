@@ -1,0 +1,21 @@
+
+
+<div class="container"  ng-app="loginApp" ng-controller="loginCtrl">
+<h1>login</h1>
+      <form class="form-signin"> 
+        <label for="inputname" class="sr-only">email address</label>
+        <input type="text" id="inputname" ng-model='user.username' class="from-control"  placeholder="username" required="" autofocus="">
+        <label for="inputPassword" class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Senha</font></font></label>
+        <input type="password" id="ng-model="user.password"  placeholder="Password" required="" class="from-control" > 
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Lembre de mim
+          </font></font></label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="login()"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Entrar</font></font></button>
+      </form>
+
+      </div>
+      <script type="text/javascript" src="/components/angular/angular.min.js"></script>
+    <script src="/js/modules/login/index.js">
+    </script>

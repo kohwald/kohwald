@@ -1,0 +1,123 @@
+<!-- .row title -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Receituario</h1>
+        
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<!-- .row body -->
+<div class="row" ng-app="receituarioApp" ng-controller="receituarioCtrl">
+    <div class="row" style="margin-bottom:5px;">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" ng-click="new()" data-toggle="modal" data-target="#edit_receituario"><i class="fa fa-plus" ></i> New</button>
+        </div>
+        <!-- /.col-lg-2 -->
+        <div class="col-md-7">
+            
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-md-3" style="text-align:right">
+        
+            
+        </div>
+        <!-- /.col-lg-2 -->
+    </div>    
+    <!-- /.row -->
+   
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Product list
+
+                </div>
+
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="dataTable_wrapper">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example" datatable dt-options="dtOptions"  dt-columns="dtColumns" dt-instance="dtInstance" >
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>DataVenda</th>
+                                    <th>FuncionarioId</th>
+                                    <th>ClienteId</th>
+                                    <th>RemedioId</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+
+        <!-- edit_receituario Modal -->
+        <div class="modal fade" id="edit_receituario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">New/Edit Receituario</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="orderform" role="form" action="/orders/new" method="post">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                 <div class="panel-body">
+                                        <div class="row">
+                                            <input type="hidden" id="receituario_id" name="receituario_id" ng-model="receituario.id">
+                                            
+                                            <div class="form-group">
+                                                <label>DataVenda</label>
+                                                <input class="form-control" placeholder="DataVenda" id="receituario_dataVenda" name="receituario_dataVenda" ng-model="receituario.dataVenda">
+                                                <p class="help-block">Receituario's DataVenda</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>FuncionarioId</label>
+                                                <input class="form-control" placeholder="FuncionarioId" id="receituario_funcionarioId" name="receituario_funcionarioId" ng-model="receituario.funcionarioId">
+                                                <p class="help-block">Receituario's FuncionarioId</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>ClienteId</label>
+                                                <input class="form-control" placeholder="ClienteId" id="receituario_clienteId" name="receituario_clienteId" ng-model="receituario.clienteId">
+                                                <p class="help-block">Receituario's ClienteId</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>RemedioId</label>
+                                                <input class="form-control" placeholder="RemedioId" id="receituario_remedioId" name="receituario_remedioId" ng-model="receituario.remedioId">
+                                                <p class="help-block">Receituario's RemedioId</p>
+                                            </div>
+                                        </div>
+                                        <!-- /.row (nested) -->
+                                    </div>
+                            </div>
+                            <!-- /.col-lg-12 -->
+                        </div>
+                        </form>
+                        <div class="row">
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveButton" ng-click="save()" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </div>
+
+</div>

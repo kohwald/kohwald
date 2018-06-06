@@ -12,7 +12,9 @@ module.exports = {
 
         id: {
             type: 'integer',
-            primaryKey: true
+            primaryKey: true,
+	    autoincrement: true,
+	    unique: true
         },
 
         name: {
