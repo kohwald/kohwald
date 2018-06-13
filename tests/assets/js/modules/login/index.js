@@ -14,18 +14,21 @@ function($scope, $compile,$http){
 	$scope.login = function(){
 		console.log("entrou");
 		console.log($scope.user);
-		ngcurd.post('/login',login,{
-			success: function(a,b,c){
+		$http({
+			url: '/login',
+			method: 'POST',
+			data: $scope.user
+		}).then(function(a,b,c){
 				console.log(a,b,c);
-				if (a.user){
+				if (a.data.user){
 					window.location = "/";
 				}
 				else
 				{
-					$scope.mensagem = a.message;
+					$scope.mensagem = a.data.message;
 				}
 			}
-		})
+		)
 	}
 	$scope.init()
 });
