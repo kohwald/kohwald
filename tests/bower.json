@@ -24,6 +24,9 @@
     "angular-datatables":"0.6.2",
     "toastr":"",
     "blockUI":"",
-    "bootbox":"~4.4.0"
+    "bootbox":"~4.4.0",
+     "angular-bootstrap3-typeahead": "",
+     "bootstrap3-typeahead": "https://github.com/bassjobsen/Bootstrap-3-Typeahead.git#master"
+
   }
 }

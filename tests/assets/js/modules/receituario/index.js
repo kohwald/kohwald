@@ -1,4 +1,4 @@
-var app = angular.module('receituarioApp', ['datatables'])
+var app = angular.module('receituarioApp', ['datatables', 'bootstrap3-typeahead'])
 app.controller('receituarioCtrl', function($scope, $compile, $http, DTOptionsBuilder, DTColumnBuilder) {
 
     /**
@@ -10,7 +10,38 @@ app.controller('receituarioCtrl', function($scope, $compile, $http, DTOptionsBui
         $scope.receituarios = {}
         $scope.dtInstance = {};
         $scope.init_dataTable()
+        $scope.funcionarios = [];
+        $http.get('/funcionarios/query').then(function(response) {
+           $scope.funcionarios = response.data.data
+        });
+         $scope.clientes = [];
+        $http.get('/clientes/query').then(function(response) {
+           $scope.clientes = response.data.data
+        });
+         $scope.remedios = [];
+        $http.get('/Remedios/query').then(function(response) {
+           $scope.remedios = response.data.data
+        });
         $scope.new()
+    }
+
+    $scope.displayTextFuncionario = function(item) {
+        return item.nome;
+    }
+    $scope.afterSelectFuncionario = function(item) {
+        $scope.receituario.funcionarioId = item.id
+    }
+    $scope.displayTextlCliente = function(item) {
+        return item.nome;
+    }
+    $scope.afterSelectCliente = function(item) {
+        $scope.receituario.clienteId = item.id
+    }
+    $scope.displayTextlRemedio = function(item) {
+        return item.nome;
+    }
+    $scope.afterSelectRemedio = function(item) {
+        $scope.receituario.remedioId = item.id
     }
 
     /**
