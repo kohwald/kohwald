@@ -11,15 +11,15 @@ app.controller('receituarioCtrl', function($scope, $compile, $http, DTOptionsBui
         $scope.dtInstance = {};
         $scope.init_dataTable()
         $scope.funcionarios = [];
-        $http.get('/funcionarios/query').then(function(response) {
+        $http.get('/funcionario/query').then(function(response) {
            $scope.funcionarios = response.data.data
         });
          $scope.clientes = [];
-        $http.get('/clientes/query').then(function(response) {
+        $http.get('/cliente/query').then(function(response) {
            $scope.clientes = response.data.data
         });
          $scope.remedios = [];
-        $http.get('/Remedios/query').then(function(response) {
+        $http.get('/remedio/query').then(function(response) {
            $scope.remedios = response.data.data
         });
         $scope.new()
@@ -31,14 +31,14 @@ app.controller('receituarioCtrl', function($scope, $compile, $http, DTOptionsBui
     $scope.afterSelectFuncionario = function(item) {
         $scope.receituario.funcionarioId = item.id
     }
-    $scope.displayTextlCliente = function(item) {
+    $scope.displayTextCliente = function(item) {
         return item.nome;
     }
     $scope.afterSelectCliente = function(item) {
         $scope.receituario.clienteId = item.id
     }
-    $scope.displayTextlRemedio = function(item) {
-        return item.nome;
+    $scope.displayTextRemedio = function(item) {
+        return item.lote;
     }
     $scope.afterSelectRemedio = function(item) {
         $scope.receituario.remedioId = item.id

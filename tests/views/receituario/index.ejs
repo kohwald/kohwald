@@ -84,17 +84,17 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>FuncionarioId</label>
-                                                <input class="form-control" placeholder="FuncionarioId" id="receituario_funcionarioId" name="receituario_funcionarioId" ng-model="receituario.funcionarioId">
+                                                <input class="form-control" placeholder="FuncionarioId" id="receituario_funcionarioId" name="receituario_funcionarioId" ng-model="funcionarioText" bs3-typeahead bs3-promise="funcionarios" bs3-displayText="displayTextFuncionario" bs3-afterSelect="afterSelectFuncionario">
                                                 <p class="help-block">Receituario's FuncionarioId</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>ClienteId</label>
-                                                <input class="form-control" placeholder="ClienteId" id="receituario_clienteId" name="receituario_clienteId" ng-model="receituario.clienteId">
+                                                <input class="form-control" placeholder="ClienteId" id="receituario_clienteId" name="receituario_clienteId" ng-model="clienteText" bs3-typeahead bs3-promise="clientes" bs3-displayText="displayTextCliente" bs3-afterSelect="afterSelectCliente">
                                                 <p class="help-block">Receituario's ClienteId</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>RemedioId</label>
-                                                <input class="form-control" placeholder="RemedioId" id="receituario_remedioId" name="receituario_remedioId" ng-model="remedioText" bs3-typeahead bs3-promise="remedios" bs3-displayText="displayTextRemedio" bs3-afterSelect="afterSelectRemedio">
+                                                <input class="form-control" placeholder="RemedioId" id="receituario_remedioId" name="receituario_remedioId" ng-model="remedioText" bs3-typeahead bs3-promise="remedios" bs3-displayText="displayTextRemedio" bs3-afterSelect="afterSelectRemedio"/>
                                                 <p class="help-block">Receituario's RemedioId</p>
                                             </div>
                                         </div>

@@ -33,14 +33,15 @@ module.exports = {
         var all = req.allParams();
         var search = req.param('search')
         var order = req.param('order')
-        if (!order.length) {
+        if (!order || !order.length) {
             order = [{
                 column: 'id',
                 dir: 'desc'
             }]
         }
-        var limit = all['length']
-        var skip = req.param('start')
+        var limit = all['length'] || 10000;
+
+        var skip = req.param('start') || 0;
 
         var sort = cols[order[0].column] + ' ' + order[0].dir
         var query;
